@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <style>
+            *{
+                box-sizing:border-box;
+            }
+            body{
+                margin:0px;
+            }
+            .nav{
+                background-color:black;
+                display:flex;
+                flex-wrap:wrap;
+                
+            }
+            .nav-link a,.dropdown-a{
+                color:white;
+                padding:15px 20px;
+                text-decoration:none;
+                
+            }
+            .nav-link a:hover,.dropdown-a :hover{
+                color:black;
+                background-color:white;
+            }
+            .dropdown-more{
+                display:none;
+                position:absolute;
+                z-index : 1;
+                min-width:30px;
+            }
+            .dropdown-more a{
+                padding:10px 20px;
+                background-color:black;
+                display:block;
+                text-align:left;
+                text-decoration:none;
+                color:white;
+            }
+            .dropdown{
+                display:inline-flex;
+            }
+            .dropdown:hover dropdown-more{
+                display:block;
+            }
+            .header{
+                display:flex;
+                flex-basis:100%;
+                max-width:100%;
+            }
+            @keyframes header-animation{
+                img{
+                    src:'band2.jpg';
+                }
+            }
+            .content{
+                display:flex;
+                flex-direction:column;
+            
+            }
+            
+            @media (max-width:607px){
+                .content div p{
+                    resize:both;
+                    width:0px;
+                    height:0px;
+                    text-align:justify;
+                    margin:10px;
+                }
+            }
+            .content-div{
+              display:flex;
+              justify-content:center;
+          }
+          .content-img{
+              height:400px;
+              width:300px;
+              border:2px solid red;
+              margin-left:10px;
+              margin-right:10px;
+          }
+          .content-img p{
+              text-align:center;
+              color:red;
+          }
+          @media (max-width:600px){
+              .content-div{
+                flex-direction:column;
+                
+              }
+              .content{
+                  flex-direction:column;
+              }
+              .content-img{
+                  margin-top:10px;
+                  align-self:center;
+              }
+          }
+
+          .tour-div{
+              display:flex;
+              justify-content:center;
+          }
+          .tour-box{
+              padding:40px;
+              display:flex;
+              flex-direction:column;
+          }
+          .tour-box div{
+              align-self: center;
+              padding:5px;
+              color:black;
+              border:2px solid white; 
+              width:600px;
+              background-color:rgb(233, 231, 231);
+          }
+          .tour-img{
+              height:500px;
+              width:300px;
+              border:2px solid red;
+              margin:10px;
+              background-color: rgb(233, 231, 231);
+          }
+          
+          .tour-img p,h2,date{
+              position:relative;
+              left:10px;
+              color:black;
+          }
+          .tour-img button{
+            padding:10px 40px;
+            color:white;
+            background-color:black;
+            position:relative;
+            left:10px;
+          }
+          .tour-img img:hover{
+              opacity:70%;
+          }
+          .tour-img button:hover{
+              background-color:rgb(219, 219, 219);
+              color:black;
+              border:2px solie rgb(219,219,219);
+          }
+          @media (max-width:600px){
+              .tour-box div{
+                  align-self:center;
+                  width:350px;
+              }
+              .tour-div{
+                  flex-direction:column;
+              }
+              .tour-img{
+                align-self:center;
+                margin-top:10px;
+              }
+          }
+
+          .contact{
+               max-width:100%;
+           }
+           .contact h2,p{
+               text-align:center;
+               color:black;
+           }
+           .contact-flex{
+               display:flex;
+               justify-content:center;
+           }
+           .contact-details{
+               margin:40px;
+           }
+           .contact-form{
+               margin:40px;
+           }
+           .contact-details li{
+               text-align:left;
+               list-style-type:circle;
+               list-style-position:inside;
+           }
+           #username{
+               padding:7px;
+           }
+           #text{
+               grid-column:1/3;
+               padding:7px;
+           }
+           .contact-form-inside{
+               display:grid;
+               grid-template-columns:50% 50%;
+               grid-gap:7px;
+               margin:10px;
+           }
+           @media (max-width:700px){
+               .contact-flex{
+                   flex-direction:column;
+               }
+               .contact-details{
+                   flex-basis:100%;
+                   max-width:100%;
+               }
+               .contact-form{
+                flex-basis:100%;
+                   max-width:100%;
+               }
+               
+           }
+           .map{
+               display:flex;
+               flex:100%;
+               max-width:100%;
+           }
+
+           .footer-content{
+               display:flex;
+               justify-content:center;
+               padding:10px;
+               margin-bottom:50px;
+           }
+           .footer-content a{
+            padding:20px 40px;
+            color:white;
+            background-color:black;
+            text-decoration:none;
+           }
+           .footer-content a:hover{
+               background-color:white;
+               color:black;
+           }
+        </style>
+    </head>
+    <body>
+       <div class="nav">
+        <div class="nav-link">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Band</a>
+            <a href="#">Tour</a>
+            <a href="#">Contact</a>
+            <div class="dropdown">
+                <button href="#" class="dropdown-a">More</button>
+                <div class="dropdown-more">
+                    <a href="#">Merchandise</a>
+                    <a href="#">Media</a>
+                    <a href="#">Extras</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    <!-- Header of Images -->
+        <header class="header">
+            <img src="band1.jpg" width="100%" height="600px">
+        </header>
+
+    <!-- content  of the Band-->
+        <div class="content">
+            <div>
+                <h2 style="text-align:center;">THE BAND</h2>
+                <h3 style="text-align:center;"><i>We Love Music</i></h3>
+                <div style="text-align:center; max-height:auto ;max-width:600px;margin-left:auto;margin-right:auto;">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur 
+                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                       ex ea commodo consequat.</div>
+            </div>
+            <div class="content-div">
+                <div class="content-img">
+                    <p>Image</p>
+                    <img src="band1.jpg" width="100%" height="80%">
+                </div>
+                <div class="content-img">
+                    <p>Image</p>
+                    <img src="band1.jpg" width="100%" height="80%">
+                </div>
+                <div class="content-img">
+                    <p>Image</p>
+                    <img src="band1.jpg" width="100%" height="80%">
+                </div>
+            </div>
+        </div>
+        
+      <!-- Tour Tickets -->
+
+      <div style="background-color:black;min-width:auto;">
+        <h2 style="text-align:center;color:white; padding-top:20px;">TOUR DATES</h2>
+        <P style="text-align:center;color:white;"><i>Remember To Book Your Tickets</i></P>
+        <div class="tour-box" >
+            <div>September</div>
+            <div>September</div>
+            <div>September</div>
+        </div>
+        <div class="tour-div">
+        <div class="tour-img" >
+            <img src="band1.jpg" width="100%" height="60%">
+            <h2>NewYork</h2>
+            <date>20-03-2020</date>
+            <p>Performance was amazing in this event</p>
+            <button>Buy Tickets</button>
+        </div>
+        <div class="tour-img" >
+            <img src="band1.jpg" width="100%" height="60%">
+            <h2>NewYork</h2>
+            <date>20-03-2020</date>
+            <p>Performance was amazing in this event</p>
+            <button>Buy Tickets</button>
+        </div>
+        <div class="tour-img" >
+            <img src="band1.jpg" width="100%" height="60%">
+            <h2>NewYork</h2>
+            <date>20-03-2020</date>
+            <p>Performance was amazing in this event</p>
+            <button>Buy Tickets</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Contact -details -->
+  <div class="contact">
+    <h2> Contact </h2>
+    <p><i>Fan? Drop a Note?</i></p>
+    <div class="contact-flex">
+        <div class="contact-details">
+          <ul>
+            <li style="list-style-image:url(svg/location.svg);">Chicago</li>
+            <li style="list-style-image:url(svg/call.svg);">99873294789</li>
+            <li style="list-style-image:url(svg/mail.svg);">Email : <i>band@gmail.com</i></li>
+          </ul>
+        </div>
+        <div class="contact-form">
+        <form>
+           <div class="contact-form-inside">
+            <input type="username" name="username" id="username" placeholder="Name">
+            <input type="email" name="email" id="username" placeholder="EMail">
+            <input type="text" name="text" id="text" placeholder="Message">
+            <button type="button" style="padding:30 30px;background-color:black;color:white;justify-self:end;">Submit</button>
+            </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- map-->
+<div class="map">
+    <img src="map.jpg" width="100%" height="600px">
+</div>
+  <footer>
+      <div class="footer-content">
+          <a href="#" style="padding:10px;background-color:rgb(231, 33, 102);">Instagram</a>
+          <a href="#" style="padding:10px;background-color:red;">Youtube</a>
+          <a href="#" style="padding:10px;background-color:rgb(86, 230, 225);">twitter</a>
+          <a href="#" style="padding:10px;background-color:rgb(95, 84, 244);">linkedin</a>
+          <a href="#" style="padding:10px;background-color:rgb(5, 25, 153);">facebook</a>
+          <a href="#" style="padding:10px;background-color:rgb(157, 236, 143);">whatsapp</a>
+      </div>
+  </footer>
+    </body>
+</html>
